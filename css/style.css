@@ -16,7 +16,7 @@ body {
   padding: 10px;
 }
 
-.txtb {
+.taskList {
   width: 100%;
   border: none;
   border-bottom: 2px solid rgb(0, 0, 0);
@@ -39,7 +39,7 @@ h3 {
   box-shadow: 2px 2px 1px rgb(241, 241, 241);
 }
 
-.comp h3 {
+.completedTask h3 {
   background-color: rgb(138, 245, 195);
 }
 
@@ -58,17 +58,17 @@ h3 {
   cursor: pointer;
 }
 
-.comp .task {
+.completedTask .task {
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
 }
 
-.notcomp {
+.pendingTask {
   float: left;
   width: 49.5%;
 }
 
-.comp {
+.completedTask {
   float: right;
   width: 49.5%;
 }

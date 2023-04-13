@@ -1,25 +1,24 @@
-$('.txtb').on('keyup', function (e) {
-  // 13 means enter button
-  if (e.keyCode == 13 && $('.txtb').val() != '') {
-    var task = $("<div class='task'></div>").text($('.txtb').val());
-    var del = $("<i class='fas fa-trash-alt'></i>").click(function () {
-      var p = $(this).parent();
+$('.taskList').on('keyup', function (enterTask) {
+  if (enterTask.keyCode == 13 && $('.taskList').val() != '') {
+    const task = $("<div class='task'></div>").text($('.taskList').val());
+    const del = $("<i class='fas fa-trash-alt'></i>").click(function () {
+      let p = $(this).parent();
       p.fadeOut(function () {
         p.remove();
       });
     });
 
-    var check = $("<i class='fas fa-check'></i>").click(function () {
-      var p = $(this).parent();
+    const check = $("<i class='fas fa-check'></i>").click(function () {
+      let p = $(this).parent();
       p.fadeOut(function () {
-        $('.comp').append(p);
+        $('.completedTask').append(p);
         p.fadeIn();
       });
       $(this).remove();
     });
 
     task.append(del, check);
-    $('.notcomp').append(task);
-    $('.txtb').val('');
+    $('.pendingTask').append(task);
+    $('.taskList').val('');
   }
 });
